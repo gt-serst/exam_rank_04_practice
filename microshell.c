@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:04:21 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/11/29 16:27:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/11 12:26:42 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	err(char *str)
 	return (1);
 }
 
-int	cd(char **argv, size_t i)
+int	cd(char **argv, int i)
 {
 	if (i != 2)
 		return (err("error: cd: bad arguments\n"));
@@ -40,7 +40,7 @@ int	cd(char **argv, size_t i)
 	return (0);
 }
 
-int	exec(char **argv, char **envp, size_t i)
+int	exec(char **argv, char **envp, int i)
 {
 	int	status;
 	int	fd[2];
@@ -66,12 +66,11 @@ int	exec(char **argv, char **envp, size_t i)
 
 int	main(int argc, char **argv, char **envp)
 {
-	size_t	i;
-	int		status;
+	int	i = 0;
+	int	status = 0;
 
 	if (argc > 1)
 	{
-		i = 0;
 		while (argv[i] && argv[++i])
 		{
 			argv += i;
@@ -83,7 +82,6 @@ int	main(int argc, char **argv, char **envp)
 			else if (i)
 				status = exec(argv, envp, i);
 		}
-		return (status);
 	}
-	return (0);
+	return (status);
 }

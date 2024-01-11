@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 13:23:14 by gt-serst          #+#    #+#             */
-/*   Updated: 2023/11/29 16:26:05 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/11 12:26:51 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define MICROSHELL_H
 
 # include <unistd.h>
-# include <sys/types.h>
 # include <sys/wait.h>
 # include <string.h>
 
